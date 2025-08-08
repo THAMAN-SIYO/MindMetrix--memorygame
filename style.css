@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(145deg, #0d0d25, #1b0033);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, p {
+  text-align: center;
+}
+
+.screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 20px rgba(125, 0, 255, 0.5);
+  border-radius: 1rem;
+}
+
+.screen:not(.hidden) {
+  display: flex;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #fff;
+  background-color: #222;
+  color: #fff;
+  width: 200px;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #a200ff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 10px #a200ff;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #cc66ff;
+  transform: scale(1.05);
+}
+
+button.selected {
+  background-color: #00f2ff;
+  box-shadow: 0 0 10px #00f2ff;
+}
+
+#stats {
+  margin: 1rem 0;
+  font-size: 14px;
+  color: #ffdaff;
+  text-align: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  gap: 15px;
+  margin-top: 1rem;
+}
+
+.card {
+  width: 60px;
+  height: 60px;
+  background-color: #ffffff12;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff00ff80;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.card.flipped {
+  background-color: #cc00ff;
+  transform: scale(1.1);
+}
+
+.card.matched {
+  background-color: #00ffcc;
+  box-shadow: 0 0 15px #00ffcc;
+}
+
+#leaderboard {
+  margin-top: 2rem;
+  background-color: #12003199;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 12px #7000ff66;
+  max-width: 400px;
+  width: 90%;
+}
+
+#leaderboard h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #f0b3ff;
+}
+
+#leaderboard-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+#leaderboard-list li {
+  padding: 6px;
+  border-bottom: 1px dashed #fff2;
+  color: #ffffff;
+}
+
+.hidden {
+  display: none !important;
+}

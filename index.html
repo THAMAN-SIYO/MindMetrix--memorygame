@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MindMetrics - Memory Game</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet"/>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="screen" id="landing-screen">
+    <h1>MindMetrics</h1>
+    <p>Test your memory, track your performance.</p>
+    <button onclick="showForm()">Start Game</button>
+  </div>
+
+  <div class="screen hidden" id="form-screen">
+    <h1>MindMetrics</h1>
+    <p>Enter your details</p>
+    <input type="text" id="name" placeholder="Name" required>
+    <input type="number" id="age" placeholder="Age" required>
+    <div id="gender-select">
+      <button onclick="selectGender(this, 'Male')">Male</button>
+      <button onclick="selectGender(this, 'Female')">Female</button>
+      <button onclick="selectGender(this, 'Other')">Other</button>
+    </div>
+    <button onclick="startGame()">Let's Go!</button>
+  </div>
+
+  <div class="screen hidden" id="game-screen">
+    <h1>MindMetrics</h1>
+    <div id="stats">
+      <span id="player-name">Name</span> |
+      <span id="player-age">Age</span> |
+      <span id="gender">Gender</span> |
+      <span id="time">Time: 0</span> |
+      <span id="attempts">Attempts: 0</span> |
+      <span id="matches">Matches: 0</span> |
+      <span id="mismatches">Mismatches: 0</span> |
+      <span id="accuracy">Accuracy: 0%</span>
+    </div>
+    <div class="board" id="board"></div>
+  </div>
+
+  <div class="screen hidden" id="win-screen">
+    <h1>Well Done!</h1>
+    <p>You completed the game!</p>
+    <div id="summary"></div>
+
+    <div id="leaderboard" style="margin-top: 2rem;">
+      <h2>Leaderboard</h2>
+      <ol id="leaderboard-list"></ol>
+    </div>
+
+    <button onclick="restartGame()">Play Again</button>
+  </div>
+
+  <div class="screen hidden" id="gameover-screen">
+    <h1>Game Over</h1>
+    <p>Better luck next time!</p>
+    <button onclick="restartGame()">Try Again</button>
+  </div>
+</body>
+</html>
